@@ -18,5 +18,6 @@ angular.module('app')
         templateUrl: 'templates/photos/new.html'
       })
 
+
       .otherwise({redirectTo: '/login'});
   });
