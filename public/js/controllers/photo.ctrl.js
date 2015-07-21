@@ -1,7 +1,8 @@
 angular.module('app')
   .controller('PhotoCtrl', 
-    ['$scope', '$http', '$window', 'PhotoApi', function($scope, $http, $window, PhotoApi){
+    ['$scope', '$http', '$window', 'PhotoApi', 'baseUrl', function($scope, $http, $window, PhotoApi, baseUrl){
 
+      $scope.base_url = baseUrl
       $scope.token = $window.sessionStorage.token
       $scope.photos = [];
       

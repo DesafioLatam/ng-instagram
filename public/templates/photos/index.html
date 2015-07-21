@@ -1,7 +1,8 @@
-<div ng-controller="PhotoCtrl">
+<div ng-controller="PhotoCtrl" class="col-md-6 col-md-offset-3">
 	Photos
 	<p> Token: <strong> {{token}} </strong> </p>
 	<div ng-repeat="(key, value) in photos">
-		<img ng-src="{{value.photo.url}}">
+		<img ng-src="{{this.base_url}}{{value.photo.url}}" class="thumbnail">
+		{{value.comment}}
 	</div>
 </div>

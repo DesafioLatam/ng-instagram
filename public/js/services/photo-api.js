@@ -1,8 +1,8 @@
-angular.module('app').service('PhotoApi', ['$http', '$window', function($http, $window){  
+angular.module('app').service('PhotoApi', ['$http', '$window', 'baseUrl', function($http, $window, baseUrl){  
   function _options(email, password){
   
   return {
-      url: "http://localhost:3000/photos/",
+      url: baseUrl + "photos/",
       method: 'get',
       headers: {
         "Accept": "application/json",

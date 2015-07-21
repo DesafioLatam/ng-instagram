@@ -1,6 +1,6 @@
 angular.module('app')
   .controller('SessionCtrl', 
-    ['$scope', '$http', '$location', '$window', 'SessionApi', function($scope, $http, $location, $window, SessionApi){
+    ['$scope', '$http', '$location', '$window', 'SessionApi', 'baseUrl', function($scope, $http, $location, $window, SessionApi, baseUrl){
 
       if ($window.sessionStorage.token == undefined)        
         $scope.token = "hola desconocido"
