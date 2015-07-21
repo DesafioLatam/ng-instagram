@@ -10,8 +10,13 @@ angular.module('app')
         templateUrl: 'templates/sessions/logout.html'
       })
       .when('/photos', {
-        controller: 'PhotoCtrl',
+        controller: 'PhotoIndexCtrl',
         templateUrl: 'templates/photos/index.html'
       })
+      .when('/photos/new', {
+        controller: 'PhotoNewCtrl',
+        templateUrl: 'templates/photos/new.html'
+      })
+
       .otherwise({redirectTo: '/login'});
   });

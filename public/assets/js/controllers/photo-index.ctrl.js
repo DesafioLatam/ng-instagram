@@ -1,5 +1,5 @@
 angular.module('app')
-  .controller('PhotoCtrl', 
+  .controller('PhotoIndexCtrl', 
     ['$scope', '$http', '$window', 'PhotoApi', 'baseUrl', function($scope, $http, $window, PhotoApi, baseUrl){
 
       $scope.base_url = baseUrl

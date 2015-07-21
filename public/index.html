@@ -9,13 +9,16 @@
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-route.js"></script>
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
-  <script src="js/app.js"></script>
-  <script src="js/routes.js"></script>
-  <script src="js/services/session-api.js"></script>
-  <script src="js/services/photo-api.js"></script>
-  <script src="js/services/base-url.js"></script>
-  <script src="js/controllers/session.ctrl.js"></script>
-  <script src="js/controllers/photo.ctrl.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/routes.js"></script>
+  <script src="assets/js/services/session-api.js"></script>
+  <script src="assets/js/services/photo-api.js"></script>
+  <script src="assets/js/services/base-url.js"></script>
+  <script src="assets/js/controllers/session.ctrl.js"></script>
+  <script src="assets/js/controllers/photo-index.ctrl.js"></script>
+  <script src="assets/js/controllers/photo-new.ctrl.js"></script>
+  <script src="vendor/js/angular-base64-upload.min.js"></script>
+  
 
 </head>
 <body ng-app="app">
@@ -36,7 +39,7 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Subir Foto <span class="sr-only">(current)</span></a></li>
+          <li class="active"><a href="#/photos/new">Subir Foto <span class="sr-only">(current)</span></a></li>
           <li><a href="#/photos">Ver Fotos</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
