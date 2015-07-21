@@ -1,18 +1,23 @@
 angular.module('app')
-	.controller('SessionCtrl', 
-		['$scope', '$http', 'auth_token', 'SessionApi', function($scope, $http, auth_token, SessionApi){
+  .controller('SessionCtrl', 
+    ['$scope', '$http', '$location', '$window', 'SessionApi', function($scope, $http, $location, $window, SessionApi){
 
-		$scope.token = "hola"
-		$scope.login = function()
-		{
-			console.log("hola");
-			SessionApi.login($scope.email, $scope.password).then(function(http_object){
-				console.log(http_object);
-				auth_token.token = http_object.data.auth_token;
-				$scope.token = auth_token.token
+      if ($window.sessionStorage.token == undefined)        
+        $scope.token = "hola desconocido"
+      else
+        $scope.token = $window.sessionStorage.token 
+      
 
-	      }).catch(function(e){console.log(e)});
-		}
+      $scope.login = function()
+      {
+        console.log("hola");
+        SessionApi.login($scope.email, $scope.password).then(function(http_object){
+          $window.sessionStorage.token = http_object.data.auth_token;
+          $scope.token = http_object.data.auth_token;
+          $location.path( "/photos" );
+
+          }).catch(function(e){console.log(e)});
+      }
 
 
 

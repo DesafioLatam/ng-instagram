@@ -9,5 +9,9 @@ angular.module('app')
         controller: 'SessionCtrl',
         templateUrl: 'templates/sessions/logout.html'
       })
+      .when('/photos', {
+        controller: 'PhotoCtrl',
+        templateUrl: 'templates/photos/index.html'
+      })
       .otherwise({redirectTo: '/login'});
   });

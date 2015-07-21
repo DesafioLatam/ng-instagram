@@ -1,4 +1,4 @@
-angular.module('app').service('SessionApi', ['$http', 'auth_token', function($http, auth_token){  
+angular.module('app').service('SessionApi', ['$http', '$window', function($http, $window){  
   function _options(email, password){
   
   return {
@@ -7,7 +7,6 @@ angular.module('app').service('SessionApi', ['$http', 'auth_token', function($ht
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "auth_token": auth_token.token
       },
       data: {
         session: {
