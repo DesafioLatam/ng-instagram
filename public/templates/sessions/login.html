@@ -1,6 +1,15 @@
 <div ng-controller="SessionCtrl">
 	<p> Token: <strong> {{token}} </strong> </p>
-	<input name="email" ng-model="email">
-	<input name="password" ng-model="password">
-	<input type="button" value="Login" ng-click = "login()">
+	<div class="form-group">
+		Email:
+		<input name="email" ng-model="email" class="form-control">
+	</div>
+
+	<div class="form-group">
+		Password:
+		<input name="password" ng-model="password" class="form-control">
+	</div>
+	<div class="form-group">
+		<input type="button" value="Login" ng-click = "login()" class="btn btn-primary">
+	</div>
 </div>
