@@ -10,7 +10,6 @@ angular.module('app')
 
       $scope.login = function()
       {
-        console.log("hola");
         SessionApi.login($scope.email, $scope.password).then(function(http_object){
           $window.sessionStorage.token = http_object.data.auth_token;
           $scope.token = http_object.data.auth_token;

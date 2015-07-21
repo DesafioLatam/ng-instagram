@@ -1,7 +1,7 @@
 <div ng-controller="PhotoCtrl">
 	Photos
 	<p> Token: <strong> {{token}} </strong> </p>
-	<input name="email" ng-model="email">
-	<input name="password" ng-model="password">
-	<input type="button" value="Login" ng-click = "login()">
+	<div ng-repeat="(key, value) in photos">
+		<img ng-src="{{value.photo.url}}">
+	</div>
 </div>
