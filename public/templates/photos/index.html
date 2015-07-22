@@ -1,8 +1,10 @@
 <div ng-controller="PhotoIndexCtrl">
 	Photos
 	<p> Token: <strong> {{token}} </strong> </p>
-	<div ng-repeat="(key, value) in photos" class="thumbnail">
-		<img ng-src="{{this.base_url}}{{value.photo.url}}" class="img-respnsive">
-		{{value.comment}}
-	</div>
+	<figure ng-repeat="(key, value) in photos" class="thumbnail">
+		<img ng-src="{{this.base_url}}{{value.photo.url}}" class="img-responsive">
+		<figcaption>
+			<p>{{value.comment}} by <span>{{value.user}}</span></p>
+		</figcaption>
+	</figure>
 </div>
