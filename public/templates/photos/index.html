@@ -2,9 +2,9 @@
 	Photos
 	<p> Token: <strong> {{token}} </strong> </p>
 	<figure ng-repeat="(key, value) in photos" class="thumbnail">
-		<img ng-src="{{this.base_url}}{{value.photo.url}}" class="img-responsive">
+		<img ng-src="{{this.base_url}}{{value.photo}}" class="img-responsive">
 		<figcaption>
-			<p>{{value.comment}} by <span>{{value.user}}</span></p>
+			<p><b>{{value.comment}}</b> by <span>{{value.user}}</span></p>
 		</figcaption>
 	</figure>
 </div>

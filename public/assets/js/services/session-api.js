@@ -1,41 +1,39 @@
-angular.module('app').service('SessionApi', ['$http', '$window', function($http, $window){  
+angular.module('app').service('SessionApi', ['$http', '$window', 'baseUrl', function($http, $window, baseUrl){
   function _login_options(email, password){
-  
-  return {
-      url: "http://localhost:3000/sessions/",
+
+    return {
+      url: baseUrl + 'sessions/',
       method: 'post',
       headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json",
+        "Accept": 'application/json',
+        "Content-Type": 'application/json',
       },
       data: {
         session: {
-            email: email,
-            password: password
+          email: email,
+          password: password
         }
       }
-     }
-  }; 
+    };
+  }
 
-  this.login = function(email, password){  
+  this.login = function(email, password){
     return $http(_login_options(email, password));
   };
 
   function _logout_options(){
     return {
-          url: "http://localhost:3000/sessions/" + $window.sessionStorage.id,
-          method: 'delete',
-          headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json",
-            "auth_token": $window.sessionStorage.token
-          },
-         }
-      }; 
+      url: baseUrl + 'sessions/' + $window.sessionStorage.id,
+      method: 'delete',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'auth_token': $window.sessionStorage.token
+      },
+    };
+  }
 
-
-
-  this.logout = function(){  
+  this.logout = function(){
     return $http(_logout_options());
   };
 
